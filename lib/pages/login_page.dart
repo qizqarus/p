@@ -53,14 +53,36 @@ class LoginPage extends StatelessWidget {
             controller: _pwController,
           ),
 
-          Gap(25),
+          const Gap(25),
 
           // login
           MyButton(
-            text: "asd",
+            text: "Login",
             onTap: login,
           ),
+
+          const Gap(25),
+
           // register
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Not a member?",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+              Gap(5),
+              Text(
+                "Register now!",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ],
+          )
         ]),
       ),
     );
