@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "509828808425",
+    "project_id": "minimalistic-chat",
+    "storage_bucket": "minimalistic-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509828808425:android:bb427915bdf52f94ddfa78",
+        "android_client_info": {
+          "package_name": "com.example.minimalistic_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX_wUc_6jD-w4i9iejCHa6w4Yhh6aJTQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
