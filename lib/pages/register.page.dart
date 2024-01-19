@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:minimalistic_chat/auth/auth.service.dart';
 import 'package:minimalistic_chat/components/my_button.dart';
 import 'package:minimalistic_chat/components/my_text_field.dart';
 
@@ -12,7 +13,33 @@ class RegisterPage extends StatelessWidget {
 
   RegisterPage({super.key, required this.onTap});
 
-  void register() {}
+  void register(BuildContext context) {
+    final _auth = AuthService();
+    
+    if(_pwController.text == _confirmPwController.text) {
+      try {
+        _auth.signUpWithEmailPassword(
+          _emailController.text, 
+          _pwController.text
+          );
+      } catch (e) {
+        showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    } 
+  }
+  else {
+        showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Password don't match!"),
+        ),
+      );
+    }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +97,7 @@ class RegisterPage extends StatelessWidget {
           // login
           MyButton(
             text: "Register",
-            onTap: register,
+            onTap: () => register(context),
           ),
 
           const Gap(25),
