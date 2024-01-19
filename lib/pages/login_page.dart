@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:minimalistic_chat/auth/auth.service.dart';
 import 'package:minimalistic_chat/components/my_button.dart';
 import 'package:minimalistic_chat/components/my_text_field.dart';
 
@@ -11,7 +12,21 @@ class LoginPage extends StatelessWidget {
 
   LoginPage({super.key, required this.onTap});
 
-  void login() {}
+  void login(BuildContext context) async {
+    final authService = AuthService();
+
+    try {
+      await authService.signInWithEmailPassword(
+          _emailController.text, _pwController.text);
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +75,7 @@ class LoginPage extends StatelessWidget {
           // login
           MyButton(
             text: "Login",
-            onTap: login,
+            onTap: () => login(context),
           ),
 
           const Gap(25),
