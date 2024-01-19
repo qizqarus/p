@@ -25,9 +25,7 @@ class UserTile extends StatelessWidget {
         child: Row(
           children: [
             const Icon(Icons.person),
-
             const Gap(20),
-
             Text(text),
           ],
         ),
