@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:minimalistic_chat/auth/auth.service.dart';
+import 'package:minimalistic_chat/services/auth/auth.service.dart';
 import 'package:minimalistic_chat/components/my_button.dart';
 import 'package:minimalistic_chat/components/my_text_field.dart';
 
